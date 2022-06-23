@@ -1,11 +1,11 @@
 import { Conteiner, Content } from "./style.js";
-import { Login } from "../../components/organisms/Login/index.jsx";
+import { TemplateLogin } from "../../components/organisms/TemplateLogin";
 
 export const Home = () => {
   return (
     <Conteiner>
       <Content>
-        <Login />
+        <TemplateLogin />
       </Content>
     </Conteiner>
   );

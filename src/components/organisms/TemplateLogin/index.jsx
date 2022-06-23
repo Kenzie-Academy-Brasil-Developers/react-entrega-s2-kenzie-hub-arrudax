@@ -1,17 +1,17 @@
 import Logo from "../../../assets/logo/Logo.svg";
-import { FormLogin } from "../../molecules/FormLogin";
+import { Login } from "../../molecules/Login";
 
 import { Conteiner, Content } from "./style.js";
 
-export const Login = () => {
+export const TemplateLogin = () => {
   return (
-    <Conteiner heightLogin widthMoblie >
+    <Conteiner heightLogin widthMoblie>
       <div>
         <img src={Logo} alt="Logo escrito da KenzieHub" />
       </div>
 
       <Content>
-        <FormLogin />
+        <Login />
       </Content>
     </Conteiner>
   );
