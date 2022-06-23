@@ -21,6 +21,8 @@ export default createGlobalStyle`
 
     --Sucess: #3FE864;
     --Negative: #E83F5B;
+
+    --Color-text: #fff;
 }
 
 body, input, button {
@@ -35,16 +37,21 @@ ul, li, ol {
 h1, h2, h3 {
      font-size: 16px;
      font-weight: bold;
+     color: var(--Color-text);
 }
 
-p {
+p, label {
      font-size: 12px;
      font-weight: 400;
+     color: var(--Color-text);
+
 }
 
 span{
      font-size:  12px;
      font-weight: bold;
+     color: var(--Color-text);
+
 }
 
 button {
@@ -52,5 +59,6 @@ button {
 }
 a {
     text-decoration: none;
+
 }
 `;
