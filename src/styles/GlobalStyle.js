@@ -1,13 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: 0;
-
-}
 :root {
     --Color-primary: #FF577F;
     --Color-primary-Focus: #FF427F; 
@@ -25,9 +18,17 @@ export default createGlobalStyle`
     --Color-text: #fff;
 }
 
-body, input, button {
-   font-family: 'Inter', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    
+    font-family: 'Inter', sans-serif;
 
+}
+body {
+    background-color: var(--Grey-4);
 }
 
 ul, li, ol {
@@ -50,13 +51,15 @@ p, label {
 span{
      font-size:  12px;
      font-weight: bold;
-     color: var(--Color-text);
+     color: var(--Grey-1);
+
 
 }
 
 button {
     cursor: pointer;
 }
+
 a {
     text-decoration: none;
 
