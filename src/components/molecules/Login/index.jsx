@@ -5,7 +5,7 @@ import { StyleButton } from "../../atoms/StyleButton";
 import { PasswordInput } from "../../atoms/PasswordInput";
 import { ThemeInput } from "../../atoms/ThemeInput/index.jsx";
 
-export const FormLogin = () => {
+export const Login = () => {
   const history = useHistory();
 
   const handleNavigation = (patch) => {
