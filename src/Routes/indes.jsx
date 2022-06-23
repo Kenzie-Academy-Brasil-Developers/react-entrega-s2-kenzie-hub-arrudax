@@ -7,6 +7,7 @@ function Routes() {
       <Route exact path="/">
         <Home />
       </Route>
+      
     </Switch>
   );
 }

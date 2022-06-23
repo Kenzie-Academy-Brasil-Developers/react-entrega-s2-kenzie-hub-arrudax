@@ -5,12 +5,13 @@ import { Conteiner, Content } from "./style.js";
 
 export const Login = () => {
   return (
-    <Conteiner themeLoginHeight themeLoginWidth>
+    <Conteiner heightLogin widthMoblie >
       <div>
         <img src={Logo} alt="Logo escrito da KenzieHub" />
       </div>
+
       <Content>
-       <FormLogin />
+        <FormLogin />
       </Content>
     </Conteiner>
   );
