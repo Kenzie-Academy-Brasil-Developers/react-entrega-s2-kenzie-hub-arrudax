@@ -1,11 +1,11 @@
-import { Conteiner, Content } from "./style.js";
-import { TemplateLogin } from "../../components/organisms/TemplateLogin";
+import { TemplateLandingPage } from "../../components/organisms/TemplateLandingPage";
 
+import { Conteiner, Content } from "./style.js";
 export const Home = () => {
   return (
     <Conteiner>
       <Content>
-        <TemplateLogin />
+        <TemplateLandingPage />
       </Content>
     </Conteiner>
   );
