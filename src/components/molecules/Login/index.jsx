@@ -37,7 +37,7 @@ export const Login = () => {
       <div className="form__singup">
         <span>Ainda não possui uma conta?</span>
         <StyleButton
-          onClick={() => handleNavigation("/signup")}
+          onClick={() => handleNavigation("/singup")}
           colorSchema="grey"
           sizeButton="100%"
         >
