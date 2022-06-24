@@ -11,6 +11,10 @@ export const Conteiner = styled.div`
 
   .form__title {
     text-align: center;
+
+    span {
+      font-weight: 400;
+    }
   }
   .form__input {
     display: flex;
