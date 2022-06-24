@@ -14,13 +14,15 @@ export const TemplateLogin = () => {
     <>
       {history.location.pathname !== "/singup" ? (
         <Conteiner heightLogin positionLogin="center">
-          <div className="form__header">
-            <LogoKenzieHub />
-          </div>
+          <div className="position">
+            <div className="form__header">
+              <LogoKenzieHub />
+            </div>
 
-          <Content>
-            <Login />
-          </Content>
+            <Content>
+              <Login />
+            </Content>
+          </div>
         </Conteiner>
       ) : (
         <Conteiner positionLogin="space-between">

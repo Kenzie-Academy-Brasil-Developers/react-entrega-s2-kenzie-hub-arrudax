@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 
-import { Conteiner } from "./style.js";
+import { Conteiner, Content } from "./style.js";
 import { StyleButton } from "../../atoms/StyleButton";
 import { PasswordInput } from "../../atoms/PasswordInput";
 import { ThemeInput } from "../../atoms/ThemeInput/index.jsx";
@@ -15,35 +15,37 @@ export const Login = () => {
 
   return (
     <Conteiner>
-      <div className="form__title">
-        <h1>Login</h1>
-      </div>
-      <div className="form__input">
-        <label>Email</label>
-        <ThemeInput />
-      </div>
-      <div className="form__input">
-        <label>Senha</label>
-        <PasswordInput />
-      </div>
+      <Content>
+        <div className="form__title">
+          <h1>Login</h1>
+        </div>
+        <div className="form__input">
+          <label>Email</label>
+          <ThemeInput />
+        </div>
+        <div className="form__input">
+          <label>Senha</label>
+          <PasswordInput />
+        </div>
 
-      <StyleButton
-        onClick={() => handleNavigation("/login")}
-        colorSchema="primary"
-      >
-        Logar
-      </StyleButton>
-
-      <div className="form__singup">
-        <span>Ainda não possui uma conta?</span>
         <StyleButton
-          onClick={() => handleNavigation("/singup")}
-          colorSchema="grey"
-          sizeButton="100%"
+          onClick={() => handleNavigation("/login")}
+          colorSchema="primary"
         >
-          Cadastre-se
+          Logar
         </StyleButton>
-      </div>
+
+        <div className="form__singup">
+          <span>Ainda não possui uma conta?</span>
+          <StyleButton
+            onClick={() => handleNavigation("/singup")}
+            colorSchema="grey"
+            sizeButton="100%"
+          >
+            Cadastre-se
+          </StyleButton>
+        </div>
+      </Content>
     </Conteiner>
   );
 };
