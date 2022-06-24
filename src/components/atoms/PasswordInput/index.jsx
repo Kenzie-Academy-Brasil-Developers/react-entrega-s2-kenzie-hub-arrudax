@@ -5,7 +5,7 @@ import { IconButton, InputAdornment, OutlinedInput } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-export const PasswordInput = ({ ...rest }) => {
+export const PasswordInput = ({ register, name, modificador, ...rest }) => {
   const [values, setValues] = useState({
     amount: "",
     password: "",
@@ -32,10 +32,15 @@ export const PasswordInput = ({ ...rest }) => {
   return (
     <Conteiner>
       <OutlinedInput
-        id="outlined-adornment-password"
+        id={
+          modificador === "password"
+            ? "outlined-adornment-password"
+            : "outlined-adornment-password2"
+        }
         type={values.showPassword ? "text" : "password"}
         value={values.password}
         onChange={handleChange("password")}
+        {...rest}
         sx={{
           backgroundColor: "var(--Grey-1)",
           color: "var(--Color-text)",
@@ -45,9 +50,15 @@ export const PasswordInput = ({ ...rest }) => {
           "&.Mui-focused": {
             border: "1px solid var(--Color-text)",
           },
+          "&.Mui-placeholder": {
+            fontFamily: "Inter",
+            fontWeight: "400",
+            fontSize: "16px",
+            color: "var(--Color-text)",
+          },
           height: "48px",
         }}
-        {...rest}
+        inputProps={{ ...register(name) }}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
@@ -60,6 +71,7 @@ export const PasswordInput = ({ ...rest }) => {
             </IconButton>
           </InputAdornment>
         }
+        label="Password"
       />
     </Conteiner>
   );

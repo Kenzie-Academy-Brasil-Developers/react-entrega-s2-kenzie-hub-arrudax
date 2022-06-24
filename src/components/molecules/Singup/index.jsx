@@ -1,8 +1,10 @@
+import { PasswordInput } from "../../atoms/PasswordInput";
+import { SelectInput } from "../../atoms/SelectInput";
 import { StyleButton } from "../../atoms/StyleButton";
 import { ThemeInput } from "../../atoms/ThemeInput";
 import { Conteiner, Content } from "./style.js";
 
-export const Singup = () => {
+export const Singup = ({ register, errors }) => {
   return (
     <Conteiner>
       <Content>
@@ -12,42 +14,94 @@ export const Singup = () => {
         </div>
 
         <div className="form__input">
-          <label className="label__input">Nome</label>
-          <ThemeInput placeholder="Digite aqui seu nome" />
+          <div className="label__input">
+            <label>Nome</label>
+            {errors.name && <span>{errors.name.message}</span>}
+          </div>
+          <ThemeInput
+            register={register}
+            name="name"
+            placeholder="Digite aqui seu nome"
+          />
         </div>
 
         <div className="form__input">
-          <label className="label__input">Email</label>
-          <ThemeInput placeholder="Digite aqui seu email" />
+          <div className="label__input">
+            <label>E-mail</label>
+            {errors.email && <span>{errors.email.message}</span>}
+          </div>
+          <ThemeInput
+            register={register}
+            name="email"
+            placeholder="Digite aqui seu email"
+          />
         </div>
 
         <div className="form__input">
-          <label className="label__input">Senha</label>
-          <ThemeInput placeholder="Digite aqui sua senha" />
+          <div className="label__input">
+            <label>Senha</label>
+            {errors.password && <span>{errors.password.message}</span>}
+          </div>
+          <PasswordInput
+            modificador="password"
+            register={register}
+            name="password"
+            placeholder="Digite aqui sua senha"
+          />
         </div>
 
         <div className="form__input">
-          <label className="label__input">Confirme Senha</label>
-          <ThemeInput placeholder="Digite novamente sua senha" />
+          <div className="label__input">
+            <label>Confirme Senha</label>
+            {errors.confirmPassword && (
+              <span>{errors.confirmPassword.message}</span>
+            )}
+          </div>
+          <PasswordInput
+            modificador="confirmPassword"
+            register={register}
+            name="confirmPassword"
+            placeholder="Digite aqui sua senha"
+          />
         </div>
 
         <div className="form__input">
-          <label className="label__input">Bio</label>
-          <ThemeInput placeholder="Fale sobre você" />
+          <div className="label__input">
+            <label>Bio</label>
+            {errors.bio && <span>{errors.bio.message}</span>}
+          </div>
+          <ThemeInput
+            register={register}
+            name="bio"
+            placeholder="Fale sobre você"
+          />
         </div>
 
         <div className="form__input">
-          <label className="label__input">Contato</label>
-          <ThemeInput placeholder="Opção de contato" />
+          <div className="label__input">
+            <label>Contato</label>
+            {errors.contact && <span>{errors.contact.message}</span>}
+          </div>
+          <ThemeInput
+            register={register}
+            name="contact"
+            placeholder="Opção de contato"
+          />
         </div>
 
         <div className="form__input">
-          <label className="label__input">Selecionar módulo</label>
-          <ThemeInput placeholder="Primeiro Módulo" />
+          <div className="label__input">
+            <label>Modúlo</label>
+            {errors.module && <span>{errors.module.message}</span>}
+          </div>
+
+          <SelectInput register={register} name="module" />
         </div>
 
         <div className="form__btn">
-          <StyleButton colorSchema="secondary">Cadastra-se</StyleButton>
+          <StyleButton type="submit" colorSchema="secondary">
+            Cadastra-se
+          </StyleButton>
         </div>
       </Content>
     </Conteiner>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Conteiner = styled.div`
-  width: 85%;
+  width: 90%;
   height: 100%;
 
   display: flex;
@@ -9,14 +9,13 @@ export const Conteiner = styled.div`
 `;
 
 export const Content = styled.div`
- 
   .form__title {
     text-align: center;
     padding: 1.5rem;
   }
 
   .form__input {
-    height: 75px;
+    height: 85px;
 
     display: flex;
     flex-direction: column;
@@ -25,6 +24,16 @@ export const Content = styled.div`
     align-items: stretch;
 
     .label__input {
+      span {
+        font-size: 10px;
+      }
+
+      label + span {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+        flex-direction: row;
+      }
     }
   }
   .form__btn {

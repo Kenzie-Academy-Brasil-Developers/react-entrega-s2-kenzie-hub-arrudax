@@ -1,0 +1,9 @@
+.form__Select {
+  background-color: var(--Grey-1);
+  color: var(--Color-text);
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem;
+}
