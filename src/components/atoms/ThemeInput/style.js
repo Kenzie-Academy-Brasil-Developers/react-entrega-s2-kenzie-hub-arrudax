@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Conteiner = styled.input`
   background-color: var(--Grey-1);
   color: var(--Color-text);
+  
+  width: 100%;
   height: 48px;
 
   border: none;

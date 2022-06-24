@@ -5,12 +5,24 @@ export const Conteiner = styled.div`
   flex-direction: column;
   align-content: center;
 
-  gap: 1.5rem;
+  width: 100%;
+`;
 
-  width: 85%;
+export const Content = styled.div`
+  padding: 1.5rem;
 
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.2rem;
+
+  display: flex;
   .form__title {
     text-align: center;
+
+    span {
+      font-weight: 400;
+    }
   }
   .form__input {
     display: flex;

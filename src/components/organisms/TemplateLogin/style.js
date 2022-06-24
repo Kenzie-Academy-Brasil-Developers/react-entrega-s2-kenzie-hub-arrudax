@@ -3,24 +3,49 @@ import styled from "styled-components";
 export const Conteiner = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 3rem;
 
-  max-width: ${(props) => (props.widthMoblie ? "250px" : "500px")};
-  max-height: ${(props) => (props.heightLogin ? "500px" : "800px")};
+  .position {
+    padding: 2rem;
 
-  height: 100vh;
-  width: 100vw;
+    .singup__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      width: 90%;
+    }
+
+    .form__header {
+      margin-bottom: 1.5rem;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: ${(props) => props.positionLogin};
+      align-items: center;
+
+      img {
+        width: 7rem;
+      }
+    }
+
+    @media (min-width: 700px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+
+      padding: 0;
+
+      width: 20rem;
+    }
+  }
 `;
 
 export const Content = styled.div`
-  max-height: 600px;
-  max-width: 300px;
-
-  height: 100%;
-  width: 100%;
-
   background-color: var(--Grey-3);
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
