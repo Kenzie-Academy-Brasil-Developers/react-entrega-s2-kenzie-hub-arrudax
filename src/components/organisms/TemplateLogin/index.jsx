@@ -15,28 +15,32 @@ export const TemplateLogin = () => {
       {history.location.pathname !== "/singup" ? (
         <Conteiner heightLogin positionLogin="center">
           <div className="position">
-            <div className="form__header">
-              <LogoKenzieHub />
-            </div>
+            <form>
+              <div className="form__header">
+                <LogoKenzieHub />
+              </div>
 
-            <Content>
-              <Login />
-            </Content>
+              <Content>
+                <Login />
+              </Content>
+            </form>
           </div>
         </Conteiner>
       ) : (
         <Conteiner positionLogin="space-between">
           <div className="position">
-            <div className="form__header">
-              <LogoKenzieHub />
-              <StyleButton colorSchema="grey" sizeButton="5rem">
-                Voltar
-              </StyleButton>
-            </div>
+            <form>
+              <div className="form__header">
+                <LogoKenzieHub />
+                <StyleButton colorSchema="grey" sizeButton="5rem">
+                  Voltar
+                </StyleButton>
+              </div>
 
-            <Content>
-              <Singup />
-            </Content>
+              <Content>
+                <Singup />
+              </Content>
+            </form>
           </div>
         </Conteiner>
       )}
