@@ -26,6 +26,12 @@ export const Conteiner = styled.div`
       justify-content: ${(props) => props.positionLogin};
       align-items: center;
 
+      button {
+        background-color: var(--Grey-3);
+        font-weight: 600;
+        font-size: 12px;
+      }
+
       img {
         width: 7rem;
       }
@@ -40,7 +46,7 @@ export const Conteiner = styled.div`
 
       padding: 0;
 
-      width: 20rem;
+      width: 22rem;
     }
   }
 `;

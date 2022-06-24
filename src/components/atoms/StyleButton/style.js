@@ -22,6 +22,7 @@ export const Conteiner = styled.button`
 
           font-style: normal;
           font-weight: 500;
+          font-size: 16px;
         `;
       case "secondary":
         return css`
@@ -32,6 +33,7 @@ export const Conteiner = styled.button`
 
           font-style: normal;
           font-weight: 500;
+          font-size: 16px;
         `;
       case "grey":
         return css`
@@ -42,6 +44,7 @@ export const Conteiner = styled.button`
 
           font-style: normal;
           font-weight: 500;
+          font-size: 16px;
 
           &:hover {
             background-color: #343b41;

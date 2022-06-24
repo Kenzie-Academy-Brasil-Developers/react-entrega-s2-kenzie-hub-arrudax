@@ -5,11 +5,10 @@ import { StyleButton } from "../../atoms/StyleButton";
 import { PasswordInput } from "../../atoms/PasswordInput";
 import { ThemeInput } from "../../atoms/ThemeInput/index.jsx";
 
-export const Login = () => {
+export const Login = ({ register, errors }) => {
   const history = useHistory();
 
   const handleNavigation = (patch) => {
-    console.log(history);
     return history.push(patch);
   };
 
@@ -20,12 +19,26 @@ export const Login = () => {
           <h1>Login</h1>
         </div>
         <div className="form__input">
-          <label>Email</label>
-          <ThemeInput />
+          <div className="label__input">
+            <label>E-mail</label>
+            {errors.email && <span>{errors.email.message}</span>}
+          </div>
+
+          <ThemeInput
+            register={register}
+            name="email"
+            placeholder="Digite aqui seu email"
+          />
         </div>
         <div className="form__input">
           <label>Senha</label>
-          <PasswordInput />
+
+          <PasswordInput
+            modificador="password"
+            register={register}
+            name="password"
+            placeholder="Digite aqui sua senha"
+          />
         </div>
 
         <StyleButton
