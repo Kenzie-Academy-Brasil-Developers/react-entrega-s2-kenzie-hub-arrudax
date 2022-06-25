@@ -16,7 +16,7 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>Nome</label>
-            {errors.name && <span>{errors.name.message}</span>}
+            {!!errors && <span>{errors.name?.message}</span>}
           </div>
           <ThemeInput
             register={register}
@@ -28,7 +28,7 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>E-mail</label>
-            {errors.email && <span>{errors.email.message}</span>}
+            {!!errors && <span>{errors.email?.message}</span>}
           </div>
           <ThemeInput
             register={register}
@@ -40,7 +40,7 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>Senha</label>
-            {errors.password && <span>{errors.password.message}</span>}
+            {!!errors && <span>{errors.password?.message}</span>}
           </div>
           <PasswordInput
             modificador="password"
@@ -53,8 +53,8 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>Confirme Senha</label>
-            {errors.confirmPassword && (
-              <span>{errors.confirmPassword.message}</span>
+            {!!errors && (
+              <span>{errors.confirmPassword?.message}</span>
             )}
           </div>
           <PasswordInput
@@ -68,7 +68,7 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>Bio</label>
-            {errors.bio && <span>{errors.bio.message}</span>}
+            {!!errors && <span>{errors.bio?.message}</span>}
           </div>
           <ThemeInput
             register={register}
@@ -80,7 +80,7 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>Contato</label>
-            {errors.contact && <span>{errors.contact.message}</span>}
+            {!!errors && <span>{errors.contact?.message}</span>}
           </div>
           <ThemeInput
             register={register}
@@ -92,10 +92,10 @@ export const Singup = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>Modúlo</label>
-            {errors.module && <span>{errors.module.message}</span>}
+            {!!errors && <span>{errors.module?.message}</span>}
           </div>
 
-          <SelectInput register={register} name="module" />
+          <SelectInput register={register} name="course_module" />
         </div>
 
         <div className="form__btn">

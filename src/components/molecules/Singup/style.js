@@ -33,6 +33,8 @@ export const Content = styled.div`
         align-items: stretch;
         justify-content: space-around;
         flex-direction: row;
+
+        color: var(--Color-primary-Focus);
       }
     }
   }
