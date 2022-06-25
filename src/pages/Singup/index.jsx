@@ -1,11 +1,15 @@
-import { TemplateLogin } from "../../components/organisms/TemplateLogin/index.jsx";
+import { Redirect } from "react-router-dom";
+import { TemplateSingup } from "../../components/organisms/TemplateSingup/index.jsx";
 import { Conteiner, Content } from "./style.js";
 
-export const Singup = () => {
+export const Singup = ({ authenticated }) => {
+  if (authenticated) {
+    return <Redirect to="/dashboard" />;
+  }
   return (
     <Conteiner>
       <Content>
-       <TemplateLogin />
+        <TemplateSingup />
       </Content>
     </Conteiner>
   );
