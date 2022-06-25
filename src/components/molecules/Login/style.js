@@ -28,6 +28,21 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    .label__input {
+      span {
+        font-size: 10px;
+      }
+
+      label + span {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+        flex-direction: row;
+
+        color: var(--Color-primary-Focus);
+      }
+    }
   }
   .form__singup {
     display: flex;

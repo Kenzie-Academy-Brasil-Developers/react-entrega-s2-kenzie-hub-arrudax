@@ -21,7 +21,7 @@ export const Login = ({ register, errors }) => {
         <div className="form__input">
           <div className="label__input">
             <label>E-mail</label>
-            {errors.email && <span>{errors.email.message}</span>}
+            {!!errors && <span>{errors.email?.message}</span>}
           </div>
 
           <ThemeInput
@@ -31,7 +31,10 @@ export const Login = ({ register, errors }) => {
           />
         </div>
         <div className="form__input">
-          <label>Senha</label>
+          <div className="label__input">
+            <label>E-mail</label>
+            {!!errors && <span>{errors.password?.message}</span>}
+          </div>
 
           <PasswordInput
             modificador="password"
@@ -42,7 +45,8 @@ export const Login = ({ register, errors }) => {
         </div>
 
         <StyleButton
-          onClick={() => handleNavigation("/login")}
+          // onClick={() => handleNavigation("/login")}
+          type="submit"
           colorSchema="primary"
         >
           Logar

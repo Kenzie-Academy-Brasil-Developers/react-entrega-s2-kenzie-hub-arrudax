@@ -38,7 +38,7 @@ export const TemplateLogin = () => {
         /^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$/,
         "Seu telefone deve conter 11 números e sem letras"
       ),
-    module: yup.string().required('Campo obrigatório'),
+    course_module: yup.string().required("Campo obrigatório"),
   });
 
   const {
@@ -60,7 +60,7 @@ export const TemplateLogin = () => {
       {history.location.pathname !== "/singup" ? (
         <Conteiner heightLogin positionLogin="center">
           <div className="position">
-            <form>
+            <form onSubmit={handleSubmit(singup)}>
               <div className="form__header">
                 <LogoKenzieHub />
               </div>
