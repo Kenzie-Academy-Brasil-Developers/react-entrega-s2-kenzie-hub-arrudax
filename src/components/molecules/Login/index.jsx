@@ -32,7 +32,7 @@ export const Login = ({ register, errors }) => {
         </div>
         <div className="form__input">
           <div className="label__input">
-            <label>E-mail</label>
+            <label>Senha</label>
             {!!errors && <span>{errors.password?.message}</span>}
           </div>
 
@@ -44,13 +44,10 @@ export const Login = ({ register, errors }) => {
           />
         </div>
 
-        <StyleButton
-          // onClick={() => handleNavigation("/login")}
-          type="submit"
-          colorSchema="primary"
-        >
+        <StyleButton type="submit" colorSchema="primary">
           Logar
         </StyleButton>
+      
 
         <div className="form__singup">
           <span>Ainda não possui uma conta?</span>
