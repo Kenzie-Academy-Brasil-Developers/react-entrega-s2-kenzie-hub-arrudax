@@ -18,6 +18,7 @@ export default createGlobalStyle`
     --Color-text: #fff;
 
     --Hover-card: #343B41;
+    --Hover-btn2: #59323F;
 
     --Trash: rgba(255, 255, 255, 0.8);
 }
@@ -68,4 +69,135 @@ a {
     text-decoration: none;
 
 }
+
+.ReactModal__Content, .ReactModal__Content--after-open {
+ 
+
+    .modal__header {
+        padding: 20px 20px 20px 20px;
+        background-color: #343B41;
+        >div {  
+    
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            h1 {
+                color: var(--Color-text);
+            }
+        
+            button {
+                background: none;
+                border: none;
+        
+                &:hover {
+                background: none;
+        
+                }
+            }
+        }        
+    }
+}
+
+form {
+    padding: 1rem;
+
+    .campo1 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        input {
+            max-width: 400px;
+
+            background-color: var(--Grey-1);
+            color: var(--Color-text);
+
+            width: 100%;
+            height: 48px;
+
+            border: none;
+            border-radius: 5px;
+            padding: 0.7rem;
+
+            &::placeholder {
+                color: var(--Color-text);
+
+                font-family: "Inter", sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+            }
+
+            &:focus {
+                border: 1px solid var(--Color-text);
+                padding: 1rem;
+                font-family: "Inter", sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .campo2 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        select {
+            max-width: 400px;
+         
+
+            background-color: var(--Grey-1);
+            color: var(--Color-text);
+            width: 100%;
+            height: 48px;
+            border: none;
+            border-radius: 5px;
+            padding: 0.7rem;
+        }
+    }
+
+    .campoBtn {
+        
+        button {
+            max-width: 320px;
+            height: 48px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .btn__save {
+            background-color: var(--Color-primary-Negative);
+            width: 65%;
+            
+            color: white;
+            
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            margin-right: 1rem;
+            
+            
+            &:hover {
+                background-color: var(--Color-primary-Focus);
+            }
+        }
+        
+        .btn__delete {
+            background-color: var(--Grey-1);
+            width: 30%;
+            
+            color: white;
+            
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            
+            &:hover {
+                background-color: #343b41;          
+            }
+        }
+    }
+}
+
 `;
