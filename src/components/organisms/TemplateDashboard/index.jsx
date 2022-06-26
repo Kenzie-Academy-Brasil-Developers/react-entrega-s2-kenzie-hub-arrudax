@@ -1,14 +1,18 @@
-import { Background, Conteiner, Content } from "./style.js";
 import { AiOutlinePlus } from "react-icons/ai";
+
+import { useEffect, useState } from "react";
+
+import { Background, Conteiner, Content } from "./style.js";
 
 import { Header } from "../../molecules/Header";
 import { Showcase } from "../../molecules/Showcase/index.jsx";
 import { StyleButton } from "../../atoms/StyleButton/index.jsx";
-import { useEffect, useState } from "react";
 
 export const TemplateDashboard = ({ setAuthenticated }) => {
   const [fristName, setFristName] = useState("");
   const [lastName, setLastName] = useState("");
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const { name, course_module } = JSON.parse(
     localStorage.getItem("@KenzieHub:user")
@@ -27,9 +31,9 @@ export const TemplateDashboard = ({ setAuthenticated }) => {
   }, [name]);
 
   function newTech() {
-    console.log('NewTech')
+    console.log("NewTech");
+    setModalIsOpen(true);
   }
-
   return (
     <Conteiner>
       <Header setAuthenticated={setAuthenticated} />
@@ -44,12 +48,17 @@ export const TemplateDashboard = ({ setAuthenticated }) => {
       <Content>
         <div className="showcase__add">
           <h3>Tecnologias</h3>
-          <StyleButton colorSchema="grey" sizeButton="3rem" onClick={() => newTech()}>
+          <StyleButton
+            colorSchema="grey"
+            sizeButton="3rem"
+            onClick={() => newTech()}
+          >
             <AiOutlinePlus />
           </StyleButton>
         </div>
+
         <Background>
-          <Showcase />
+          <Showcase modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
         </Background>
       </Content>
     </Conteiner>

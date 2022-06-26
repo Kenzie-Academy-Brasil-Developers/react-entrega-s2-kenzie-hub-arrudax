@@ -23,7 +23,9 @@ export const Conteiner = styled.div`
     justify-content: space-around;
     align-items: center;
   }
-`;
+
+
+  `;
 
 export const Content = styled.div`
   width: 100%;
@@ -48,6 +50,8 @@ export const Content = styled.div`
       background-color: var(--Grey-3);
     }
   }
+
+ 
 `;
 
 export const Background = styled.div`
