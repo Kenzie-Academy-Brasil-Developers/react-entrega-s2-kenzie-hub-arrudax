@@ -26,6 +26,10 @@ export const TemplateDashboard = ({ setAuthenticated }) => {
     setLastName(lastNameUpperCase);
   }, [name]);
 
+  function newTech() {
+    console.log('NewTech')
+  }
+
   return (
     <Conteiner>
       <Header setAuthenticated={setAuthenticated} />
@@ -40,7 +44,7 @@ export const TemplateDashboard = ({ setAuthenticated }) => {
       <Content>
         <div className="showcase__add">
           <h3>Tecnologias</h3>
-          <StyleButton colorSchema="grey" sizeButton="3rem">
+          <StyleButton colorSchema="grey" sizeButton="3rem" onClick={() => newTech()}>
             <AiOutlinePlus />
           </StyleButton>
         </div>

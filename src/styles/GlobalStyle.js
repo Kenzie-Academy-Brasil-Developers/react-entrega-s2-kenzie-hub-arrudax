@@ -16,6 +16,10 @@ export default createGlobalStyle`
     --Negative: #E83F5B;
 
     --Color-text: #fff;
+
+    --Hover-card: #343B41;
+
+    --Trash: rgba(255, 255, 255, 0.8);
 }
 
 * {

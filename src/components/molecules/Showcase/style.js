@@ -4,9 +4,7 @@ export const Conteiner = styled.div`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  overflow-x: auto;
 
   button {
     background-color: var(--Grey-3);
@@ -19,11 +17,14 @@ export const Conteiner = styled.div`
   }
 `;
 
-export const Content = styled.div`
-  width: 100%;
-  height: 100%;
-
+export const Content = styled.ul`
   display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 2rem;
 `;
