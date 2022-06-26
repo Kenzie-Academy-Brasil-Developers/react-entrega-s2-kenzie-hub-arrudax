@@ -1,7 +1,53 @@
+import { Background, Conteiner, Content } from "./style.js";
+import { AiOutlinePlus } from "react-icons/ai";
+
 import { Header } from "../../molecules/Header";
+import { Showcase } from "../../molecules/Showcase/index.jsx";
+import { StyleButton } from "../../atoms/StyleButton/index.jsx";
+import { useEffect, useState } from "react";
 
 export const TemplateDashboard = ({ setAuthenticated }) => {
+  const [fristName, setFristName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  const { name, course_module } = JSON.parse(
+    localStorage.getItem("@KenzieHub:user")
+  );
+
+  useEffect(() => {
+    const nameSplit = name.toLowerCase().split(" ");
+
+    const fristNameUpperCase =
+      nameSplit[0].charAt(0).toUpperCase() + nameSplit[0].slice(1);
+    const lastNameUpperCase =
+      nameSplit[1].charAt(0).toUpperCase() + nameSplit[1].slice(1);
+
+    setFristName(fristNameUpperCase);
+    setLastName(lastNameUpperCase);
+  }, [name]);
+
   return (
-    <Header  setAuthenticated={setAuthenticated} />
+    <Conteiner>
+      <Header setAuthenticated={setAuthenticated} />
+
+      <div className="information__user">
+        <h1>
+          Olá, {fristName} {lastName}
+        </h1>
+        <h2>{course_module}</h2>
+      </div>
+
+      <Content>
+        <div className="showcase__add">
+          <h3>Tecnologias</h3>
+          <StyleButton colorSchema="grey" sizeButton="3rem">
+            <AiOutlinePlus />
+          </StyleButton>
+        </div>
+        <Background>
+          <Showcase />
+        </Background>
+      </Content>
+    </Conteiner>
   );
 };
