@@ -43,6 +43,10 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-around;
     align-content: center;
+
+    button {
+      background-color: var(--Grey-3);
+    }
   }
 `;
 
