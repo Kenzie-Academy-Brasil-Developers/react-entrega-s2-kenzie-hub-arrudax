@@ -17,9 +17,8 @@ export const TemplateDashboard = ({ setAuthenticated }) => {
   const { name, course_module } = JSON.parse(
     localStorage.getItem("@KenzieHub:user")
   );
-  
+
   function newTech() {
-    console.log("NewTech");
     setModalIsOpen(true);
   }
   useEffect(() => {
