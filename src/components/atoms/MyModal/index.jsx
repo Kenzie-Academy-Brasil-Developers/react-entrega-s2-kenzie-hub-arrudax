@@ -1,6 +1,17 @@
 import Modal from "react-modal";
 
-export const MyModal = ({ modalIsOpen, setModalIsOpen }) => {
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+export const MyModal = ({ modalIsOpen, setModalIsOpen, createTechs }) => {
+  const schema = yup.object().shape({
+    title: yup.string().required("Campo obrigatorio"),
+    status: yup.string(),
+  });
+
+  const { handleSubmit, register } = useForm({ resolver: yupResolver(schema) });
+
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(18, 18, 20, 0.5)",
@@ -24,17 +35,13 @@ export const MyModal = ({ modalIsOpen, setModalIsOpen }) => {
   };
 
   function closeModal() {
-    console.log("close");
-
     setModalIsOpen(false);
   }
-  function afterOpenModal() {}
 
   Modal.setAppElement("#root");
   return (
     <Modal
       isOpen={modalIsOpen}
-      onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
       contentLabel="Example Modal"
       style={customStyles}
@@ -46,15 +53,15 @@ export const MyModal = ({ modalIsOpen, setModalIsOpen }) => {
         </div>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit(createTechs)}>
         <div className="campo1">
           <label>Nome</label>
-          <input />
+          <input {...register("title")} placeholder="Tecnologia" />
         </div>
 
         <div className="campo2">
           <label>Status</label>
-          <select>
+          <select {...register("status")}>
             <option value="Iniciante">Iniciante</option>
             <option value="Intermediário">Intermediário</option>
             <option value="Avançado">Avançado</option>
@@ -62,7 +69,9 @@ export const MyModal = ({ modalIsOpen, setModalIsOpen }) => {
         </div>
 
         <div className="campoBtn">
-          <button className="btn__save">Salvar alterações</button>
+          <button type="submit" className="btn__save">
+            Salvar alterações
+          </button>
           <button className="btn__delete" sizeButton="3rem">
             Excluir
           </button>

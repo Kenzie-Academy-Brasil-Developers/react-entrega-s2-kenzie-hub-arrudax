@@ -18,30 +18,35 @@ export const TemplateDashboard = ({ setAuthenticated }) => {
     localStorage.getItem("@KenzieHub:user")
   );
 
-  useEffect(() => {
-    const nameSplit = name.toLowerCase().split(" ");
-
-    const fristNameUpperCase =
-      nameSplit[0].charAt(0).toUpperCase() + nameSplit[0].slice(1);
-    const lastNameUpperCase =
-      nameSplit[1].charAt(0).toUpperCase() + nameSplit[1].slice(1);
-
-    setFristName(fristNameUpperCase);
-    setLastName(lastNameUpperCase);
-  }, [name]);
-
   function newTech() {
-    console.log("NewTech");
     setModalIsOpen(true);
   }
+  useEffect(() => {
+    if (name.includes(" ")) {
+      const nameSplit = name.toLowerCase().split(" ");
+
+      const fristNameUpperCase =
+        nameSplit[0].charAt(0).toUpperCase() + nameSplit[0].slice(1);
+      const lastNameUpperCase =
+        nameSplit[1].charAt(0).toUpperCase() + nameSplit[1].slice(1);
+
+      setFristName(fristNameUpperCase);
+      setLastName(lastNameUpperCase);
+    }
+  }, [name]);
+
   return (
     <Conteiner>
       <Header setAuthenticated={setAuthenticated} />
 
       <div className="information__user">
-        <h1>
-          Olá, {fristName} {lastName}
-        </h1>
+        {name.includes(" ") === true ? (
+          <h1>
+            Olá {fristName} {lastName}
+          </h1>
+        ) : (
+          <h1>Olá, {name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+        )}
         <h2>{course_module}</h2>
       </div>
 
