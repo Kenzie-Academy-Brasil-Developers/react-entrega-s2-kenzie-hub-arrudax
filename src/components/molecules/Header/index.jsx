@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { LogoKenzieHub } from "../../atoms/LogoKenzieHub";
 import { StyleButton } from "../../atoms/StyleButton";
 import { Conteiner } from "./style";
+
 export const Header = ({ setAuthenticated }) => {
   const history = useHistory();
 

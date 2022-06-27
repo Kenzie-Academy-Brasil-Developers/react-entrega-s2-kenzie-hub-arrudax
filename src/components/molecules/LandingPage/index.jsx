@@ -6,8 +6,6 @@ import { Conteiner } from "./style.js";
 export const LandingPage = () => {
   const history = useHistory();
 
-  console.log(history);
-
   function go(patch) {
     history.push(patch);
   }

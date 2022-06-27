@@ -37,4 +37,14 @@ export const Conteiner = styled.li`
   &:hover {
     background-color: var(--Hover-card);
   }
+
+  @media (max-width: 280px) {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    height: 100%;
+  }
 `;

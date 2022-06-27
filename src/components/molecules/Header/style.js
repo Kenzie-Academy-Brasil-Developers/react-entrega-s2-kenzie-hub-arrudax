@@ -18,4 +18,11 @@ export const Conteiner = styled.div`
       
     }
   }
+
+  @media (min-width: 280px) {
+    img {
+      max-width: 145px;
+      width: 40%;
+    }
+  }
 `;
