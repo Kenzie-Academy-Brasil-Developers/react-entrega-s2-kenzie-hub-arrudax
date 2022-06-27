@@ -37,7 +37,7 @@ export const Conteiner = styled.div`
       }
     }
 
-    @media (min-width: 700px) {
+    @media (min-width: 280px) {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -46,7 +46,22 @@ export const Conteiner = styled.div`
 
       padding: 0;
 
+      width: 16rem;
+      margin-top: 8rem;
+    }
+
+    @media (min-width: 390px) {
+      
+
+      width: 17rem;
+      margin-top: 0;
+    }
+
+    @media (min-width: 500px) {
+      
+
       width: 22rem;
+     
     }
   }
 `;

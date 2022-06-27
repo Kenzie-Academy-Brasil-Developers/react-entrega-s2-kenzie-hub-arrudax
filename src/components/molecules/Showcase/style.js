@@ -27,4 +27,8 @@ export const Content = styled.ul`
   gap: 1rem;
 
   padding: 2rem;
+
+  @media (min-width: 280px) {
+    padding: 0.5rem;
+  }
 `;

@@ -71,8 +71,7 @@ a {
 }
 
 .ReactModal__Content, .ReactModal__Content--after-open {
- 
-
+    
     .modal__header {
         padding: 20px 20px 20px 20px;
         background-color: #343B41;
@@ -199,5 +198,6 @@ form {
         }
     }
 }
+
 
 `;
